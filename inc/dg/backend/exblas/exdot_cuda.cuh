@@ -23,26 +23,11 @@ namespace exblas{
 ///@cond
 namespace gpu{
 
-
-
 ////////////////////////////////////////////////////////////////////////////////
-// Auxiliary functions
+// Main Kernels
 ////////////////////////////////////////////////////////////////////////////////
-__device__
-static inline double TwoProductFMA(double a, double b, double *d) {
-    double p = a * b;
-    *d = __fma_rn(a, b, -p);
-    return p;
-}
-
-__device__
-static inline double KnuthTwoSum(double a, double b, double *s) {
-    double r = a + b;
-    double z = r - a;
-    *s = (a - (r - z)) + (b - z);
-    return r;
-}
-
+//In the first kernel each block produces exactly one superacc (because threads within a block can be synchronized and shared memory lives for a block )
+//the second kernel reduces all superaccs from the first kernel (because we need a global synchronization, which is induced by separate kernel launches)
 
 template<uint NBFPE, uint WARP_COUNT, class PointerOrValue1, class PointerOrValue2>
 __global__ void ExDOT(
@@ -64,7 +49,7 @@ __global__ void ExDOT(
     for(uint pos = blockIdx.x*blockDim.x+threadIdx.x; pos < NbElements; pos += gridDim.x*blockDim.x) {
         //double r = 0.0;
         //double x = TwoProductFMA(get_element(d_a,pos), get_element(d_b,pos), &r);
-        double x = d_a[pos]*d_b[pos];
+        double x = get_element(d_a,pos)*get_element(d_b,pos);
         //we do not accumulate the rest of this multiplication
 
         //Check if the input is sane
@@ -302,6 +287,7 @@ void ExDOTComplete(
         Normalize(&d_PartialSuperaccs[gid * BIN_COUNT * MERGE_SIZE], imin, imax);
     }
 
+//don't we need a global synchronization here??
     __syncthreads();
     if ((lid < BIN_COUNT) && (gid == 0)) {
         int64_t sum = 0;
@@ -356,7 +342,7 @@ void exdot_gpu(unsigned size, PointerOrValue1 x1_ptr, PointerOrValue2 x2_ptr, in
  * @param x2_ptr second array
  * @param x3_ptr third array
  * @param d_superacc pointer to an array of 64 bit integegers (the superaccumulator) in device memory with size at least \c exblas::BIN_COUNT (39) (contents are overwritten)
- * @param status 0 indicates success, 1 indicates an input value was NaN or Inf
+ * @param status 0 indicates success, 1 indicates an input value was NaN or Inf, 2 indicates overflow
  * @sa \c exblas::gpu::Round to convert the superaccumulator into a double precision number
  */
 template<class PointerOrValue1, class PointerOrValue2, class PointerOrValue3, size_t NBFPE=3>

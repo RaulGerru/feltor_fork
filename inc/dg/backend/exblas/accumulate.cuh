@@ -40,6 +40,25 @@ static inline double get_element( T* x, int i){
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// Auxiliary functions
+////////////////////////////////////////////////////////////////////////////////
+__device__
+static inline double TwoProductFMA(double a, double b, double *d) {
+    double p = a * b;
+    *d = __fma_rn(a, b, -p);
+    return p;
+}
+
+__device__
+static inline double KnuthTwoSum(double a, double b, double *s) {
+    double r = a + b;
+    double z = r - a;
+    *s = (a - (r - z)) + (b - z);
+    return r;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
 // Main computation pass: compute partial superaccs
 ////////////////////////////////////////////////////////////////////////////////
 __device__
@@ -95,8 +114,6 @@ __device__
 static inline void Accumulate( int64_t* accumulator, double x, int stride = 1) { //transposed accumulation
     if (x == 0)
         return;
-    //MW: This assert does not help very much in finding out where the nan originates
-    //assert( !std::isnan(x) && "Detected NaN in dot product!!");
 
     int e;
     frexp(x, &e); //extract the exponent of x (lies in -1024;1023 ?)
