@@ -49,11 +49,11 @@ int main()
     dg::Grid3d g3d( 1, 2, 3, 4, 5, 6, n, Nx, Ny, Nz,dg::PER,dg::PER,dg::PER);
 
     //test evaluation functions
-    const dg::DVec func1d = dg::construct<dg::DVec>( dg::evaluate( exp, g1d));
+    const dg::HVec func1d = dg::construct<dg::HVec>( dg::evaluate( exp, g1d));
     const dg::DVec func2d = dg::construct<dg::DVec>( dg::evaluate( function<double>, g2d));
     const dg::fDVec funcf2d = dg::construct<dg::fDVec>( dg::evaluate( function<float>, gf2d));
     const dg::DVec func3d = dg::construct<dg::DVec>( dg::evaluate( function3d, g3d));
-    const dg::DVec w1d = dg::construct<dg::DVec>( dg::create::weights( g1d));
+    const dg::HVec w1d = dg::construct<dg::HVec>( dg::create::weights( g1d));
     const dg::DVec w2d = dg::construct<dg::DVec>( dg::create::weights( g2d));
     const dg::fDVec wf2d = dg::construct<dg::fDVec>( dg::create::weights( gf2d));
     const dg::DVec w3d = dg::construct<dg::DVec>( dg::create::weights( g3d));

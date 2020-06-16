@@ -4,25 +4,44 @@
 #include <thrust/system/cuda/execution_policy.h>
 #include "exceptions.h"
 #include "exblas/exdot_cuda.cuh"
+#include "exblas/fpedot_cuda.cuh"
 namespace dg
 {
 namespace blas1
 {
 namespace detail
 {
-
 template<class PointerOrValue1, class PointerOrValue2>
-inline std::vector<int64_t> doDot_dispatch( CudaTag, unsigned size, PointerOrValue1 x_ptr, PointerOrValue2 y_ptr) {
-    static thrust::device_vector<int64_t> d_superacc(exblas::BIN_COUNT);
-    int64_t * d_ptr = thrust::raw_pointer_cast( d_superacc.data());
-    int status = 0;
-    exblas::exdot_gpu( size, x_ptr,y_ptr, d_ptr, &status );
-    if( status != 0)
-        throw dg::Error(dg::Message(_ping_)<<"GPU Dot product failed since one of the inputs contains NaN or Inf");
-    std::vector<int64_t> h_superacc(exblas::BIN_COUNT);
-    cudaMemcpy( &h_superacc[0], d_ptr, exblas::BIN_COUNT*sizeof(int64_t), cudaMemcpyDeviceToHost);
-    return h_superacc;
+inline std::array<double,dg::NBFPE> doDot_dispatch( CudaTag, unsigned size, PointerOrValue1 x_ptr, PointerOrValue2 y_ptr, int* status) {
+    static thrust::device_vector<double> d_fpe(dg::NBFPE, 0.);
+    double * d_ptr = thrust::raw_pointer_cast( d_fpe.data());
+    exblas::fpedot_gpu<PointerOrValue1, PointerOrValue2, dg::NBFPE>( size, x_ptr,y_ptr, d_ptr, status );
+    std::array<double,dg::NBFPE> fpe;
+    cudaMemcpy( &fpe[0], d_ptr, dg::NBFPE*sizeof(double), cudaMemcpyDeviceToHost);
+    return fpe;
 }
+//template<class PointerOrValue1, class PointerOrValue2, class PointerOrValue3>
+//inline std::array<double,dg::NBFPE> doDot_dispatch( CudaTag, unsigned size, PointerOrValue1 x_ptr, PointerOrValue2 y_ptr, PointerOrValue3 z_ptr) {
+//    static thrust::device_vector<double> d_fpe(dg::NBFPE, 0.);
+//    double * d_ptr = thrust::raw_pointer_cast( d_fpe.data());
+//    exblas::fpedot_gpu<PointerOrValue1, PointerOrValue2, PointerOrValue3, dg::NBFPE>( size, x_ptr,y_ptr,z_ptr, d_ptr, status);
+//    std::array<double,dg::NBFPE> fpe;
+//    cudaMemcpy( &fpe[0], d_ptr, dg::NBFPE*sizeof(double), cudaMemcpyDeviceToHost);
+//    return fpe;
+//}
+
+//template<class PointerOrValue1, class PointerOrValue2>
+//inline std::vector<int64_t> doDot_dispatch( CudaTag, unsigned size, PointerOrValue1 x_ptr, PointerOrValue2 y_ptr) {
+//    static thrust::device_vector<int64_t> d_superacc(exblas::BIN_COUNT);
+//    int64_t * d_ptr = thrust::raw_pointer_cast( d_superacc.data());
+//    int status = 0;
+//    exblas::exdot_gpu( size, x_ptr,y_ptr, d_ptr, &status );
+//    if( status != 0)
+//        throw dg::Error(dg::Message(_ping_)<<"GPU Dot product failed since one of the inputs contains NaN or Inf");
+//    std::vector<int64_t> h_superacc(exblas::BIN_COUNT);
+//    cudaMemcpy( &h_superacc[0], d_ptr, exblas::BIN_COUNT*sizeof(int64_t), cudaMemcpyDeviceToHost);
+//    return h_superacc;
+//}
 template<class PointerOrValue1, class PointerOrValue2, class PointerOrValue3>
 inline std::vector<int64_t> doDot_dispatch( CudaTag, unsigned size, PointerOrValue1 x_ptr, PointerOrValue2 y_ptr, PointerOrValue3 z_ptr) {
     static thrust::device_vector<int64_t> d_superacc(exblas::BIN_COUNT);

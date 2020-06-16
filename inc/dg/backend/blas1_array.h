@@ -20,17 +20,24 @@ namespace blas1
 {
 namespace detail
 {
-
 template< class T, std::size_t N>
-std::vector<int64_t> doDot_superacc( const std::array<T,N>& x, const std::array<T,N>& y, StdArrayTag)
+std::array<double,dg::NBFPE> doDot_superacc( const std::array<T,N>& x, const std::array<T,N>& y, int* status, StdArrayTag)
 {
-    std::vector<int64_t> h_superacc(exblas::BIN_COUNT);
-    int status = 0;
-    exblas::exdot_cpu( N, x.begin(),y.begin(), &h_superacc[0], &status) ;
-    if(status != 0)
-        throw dg::Error(dg::Message(_ping_)<<"CPU Dot failed since one of the inputs contains NaN or Inf");
-    return h_superacc;
+    std::array<double,dg::NBFPE> fpe;
+    exblas::exdot_cpu( N, x.begin(), y.begin(), fpe, status) ;
+    return fpe;
 }
+
+//template< class T, std::size_t N>
+//std::vector<int64_t> doDot_superacc( const std::array<T,N>& x, const std::array<T,N>& y, StdArrayTag)
+//{
+//    std::vector<int64_t> h_superacc(exblas::BIN_COUNT);
+//    int status = 0;
+//    exblas::exdot_cpu( N, x.begin(),y.begin(), &h_superacc[0], &status) ;
+//    if(status != 0)
+//        throw dg::Error(dg::Message(_ping_)<<"CPU Dot failed since one of the inputs contains NaN or Inf");
+//    return h_superacc;
+//}
 
 template<class T,std::size_t N>
 T doDot( const std::array<T,N>& x, const std::array<T,N>& y, StdArrayTag)

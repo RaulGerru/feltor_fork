@@ -75,3 +75,7 @@
 
 #endif //THRUST == CUDA
 #endif //MPI_VERSION
+
+namespace dg{
+    static constexpr int NBFPE = 3;
+}//namespace dg

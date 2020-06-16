@@ -47,16 +47,18 @@ inline get_value_type<ContainerType> reduce( const ContainerType& x, get_value_t
 namespace detail
 {
 template< class ContainerType1, class ContainerType2>
-inline std::vector<int64_t> doDot_superacc( const ContainerType1& x, const ContainerType2& y);
+inline std::array<double,dg::NBFPE> doDot_superacc( const ContainerType1& x, const ContainerType2& y);
+//inline std::vector<int64_t> doDot_superacc( const ContainerType1& x, const ContainerType2& y);
 //we need to distinguish between Scalars and Vectors
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 template< class Vector1, class Vector2>
-std::vector<int64_t> doDot_superacc( const Vector1& x, const Vector2& y, SharedVectorTag)
+std::array<double, dg::NBFPE> doDot_superacc( const Vector1& x, const Vector2& y, int* status, SharedVectorTag)
+//std::vector<int64_t> doDot_superacc( const Vector1& x, const Vector2& y, SharedVectorTag)
 {
-    static_assert( std::is_convertible<get_value_type<Vector1>, double>::value, "We only support double precision dot products at the moment!");
-    static_assert( std::is_convertible<get_value_type<Vector2>, double>::value, "We only support double precision dot products at the moment!");
+    static_assert( std::is_convertible<get_value_type<Vector1>, double>::value, "We only support value types convertible to double precision in the dot product!");
+    static_assert( std::is_convertible<get_value_type<Vector2>, double>::value, "We only support value types convertible to double precision in the dot product!");
     //find out which one is the SharedVector and determine category and policy
     using vector_type = find_if_t<dg::is_not_scalar, Vector1, Vector1, Vector2>;
     constexpr unsigned vector_idx = find_if_v<dg::is_not_scalar, Vector1, Vector1, Vector2>::value;
@@ -70,7 +72,7 @@ std::vector<int64_t> doDot_superacc( const Vector1& x, const Vector2& y, SharedV
     auto size = get_idx<vector_idx>(x,y).size();
     return dg::blas1::detail::doDot_dispatch( execution_policy(), size,
             do_get_pointer_or_reference(x, get_tensor_category<Vector1>()),
-            do_get_pointer_or_reference(y, get_tensor_category<Vector2>()));
+            do_get_pointer_or_reference(y, get_tensor_category<Vector2>()), status);
 }
 
 template< class Subroutine, class ContainerType, class ...ContainerTypes>

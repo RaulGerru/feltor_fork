@@ -72,8 +72,10 @@ double result = dg::blas1::dot( two, three); // result = 600 (100*(2*3))
 template< class ContainerType1, class ContainerType2>
 inline get_value_type<ContainerType1> dot( const ContainerType1& x, const ContainerType2& y)
 {
-    std::vector<int64_t> acc = dg::blas1::detail::doDot_superacc( x,y);
-    return exblas::cpu::Round(acc.data());
+    //std::vector<int64_t> acc = dg::blas1::detail::doDot_superacc( x,y);
+    //return exblas::cpu::Round(acc.data());
+    std::array<double, dg::NBFPE> acc = dg::blas1::detail::doDot_superacc( x,y);
+    return exblas::cpu::Round( acc);
 }
 
 /*! @brief \f$ x_0 \otimes x_1 \otimes \dots \otimes x_{N-1} \f$ Custom reduction
@@ -512,7 +514,8 @@ inline void evaluate( ContainerType& y, BinarySubroutine f, Functor g, const Con
 namespace detail{
 
 template< class ContainerType1, class ContainerType2>
-inline std::vector<int64_t> doDot_superacc( const ContainerType1& x, const ContainerType2& y)
+inline std::array<double,dg::NBFPE> doDot_superacc( const ContainerType1& x, const ContainerType2& y)
+//inline std::vector<int64_t> doDot_superacc( const ContainerType1& x, const ContainerType2& y)
 {
     static_assert( all_true<
             dg::is_vector<ContainerType1>::value,
@@ -525,7 +528,13 @@ inline std::vector<int64_t> doDot_superacc( const ContainerType1& x, const Conta
             dg::is_scalar_or_same_base_category<ContainerType2, tensor_category>::value
             >::value,
         "All container types must be either Scalar or have compatible Vector categories (AnyVector or Same base class)!");
-    return doDot_superacc( x, y, tensor_category());
+    int status = 0;
+    auto tmp = doDot_superacc( x, y, &status, tensor_category());
+    if( 1 == status )
+        throw dg::Error(dg::Message(_ping_)<<"Dot failed since one of the inputs contains NaN or Inf");
+    if( 2 == status)
+        std::cerr << "WARNING: with the FPE-based implementation we cannot keep every bit of information for this problem due to either high condition number (ill-cond), too broad dynamic range, or both. Thus, we cannot ensure correct-rounding and bitwise reproducibility. Hence, we advise to switch to the ExBLAS-based implementation for this particular (rather rare) case.\n";
+    return tmp;
 }
 
 }//namespace detail

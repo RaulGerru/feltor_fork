@@ -6,6 +6,7 @@
 #include "config.h"
 #include "blas1_serial.h"
 #include "exblas/exdot_omp.h"
+#include "exblas/fpedot_omp.h"
 namespace dg
 {
 namespace blas1
@@ -15,17 +16,35 @@ namespace detail
 const int MIN_SIZE=100;//don't parallelize if work is too small
 
 template<class PointerOrValue1, class PointerOrValue2>
-inline std::vector<int64_t> doDot_dispatch( OmpTag, unsigned size, PointerOrValue1 x_ptr, PointerOrValue2 y_ptr) {
-    std::vector<int64_t> h_superacc(exblas::BIN_COUNT);
-    int status = 0;
+inline std::array<double, dg::NBFPE> doDot_dispatch( OmpTag, unsigned size, PointerOrValue1 x_ptr, PointerOrValue2 y_ptr, int* status) {
+    std::array<double, dg::NBFPE> fpe;
     if(size<MIN_SIZE)
-        exblas::exdot_cpu( size, x_ptr,y_ptr, &h_superacc[0], &status);
+        exblas::fpedot_cpu( size, x_ptr,y_ptr, fpe, status);
     else
-        exblas::exdot_omp( size, x_ptr,y_ptr, &h_superacc[0], &status);
-    if(status != 0)
-        throw dg::Error(dg::Message(_ping_)<<"OMP Dot failed since one of the inputs contains NaN or Inf");
-    return h_superacc;
+        exblas::fpedot_omp( size, x_ptr,y_ptr, fpe, status);
+    return fpe;
 }
+//template<class PointerOrValue1, class PointerOrValue2, class PointerOrValue3>
+//inline std::array<double, dg::NBFPE> doDot_dispatch( OmpTag, unsigned size, PointerOrValue1 x_ptr, PointerOrValue2 y_ptr, PointerOrValue3 z_ptr, int* status) {
+//    std::array<double,dg::NBFPE> fpe;
+//    if(size<MIN_SIZE)
+//        exblas::fpedot_cpu( size, x_ptr, y_ptr, z_ptr, fpe, status);
+//    else
+//        exblas::fpedot_omp( size, x_ptr, y_ptr, z_ptr, fpe, status);
+//    return fpe;
+//}
+//template<class PointerOrValue1, class PointerOrValue2>
+//inline std::vector<int64_t> doDot_dispatch( OmpTag, unsigned size, PointerOrValue1 x_ptr, PointerOrValue2 y_ptr) {
+//    std::vector<int64_t> h_superacc(exblas::BIN_COUNT);
+//    int status = 0;
+//    if(size<MIN_SIZE)
+//        exblas::exdot_cpu( size, x_ptr,y_ptr, &h_superacc[0], &status);
+//    else
+//        exblas::exdot_omp( size, x_ptr,y_ptr, &h_superacc[0], &status);
+//    if(status != 0)
+//        throw dg::Error(dg::Message(_ping_)<<"OMP Dot failed since one of the inputs contains NaN or Inf");
+//    return h_superacc;
+//}
 template<class PointerOrValue1, class PointerOrValue2, class PointerOrValue3>
 inline std::vector<int64_t> doDot_dispatch( OmpTag, unsigned size, PointerOrValue1 x_ptr, PointerOrValue2 y_ptr, PointerOrValue3 z_ptr) {
     std::vector<int64_t> h_superacc(exblas::BIN_COUNT);
