@@ -1,0 +1,9 @@
+var searchData=
+[
+  ['einsminus_0',['einsMinus',['../../../geometries/html/group__fieldaligned.html#gga10e4ac4f15fe73a4ff10569985224101ac4342c25611d86ddd01f4f48a2054f86',1,'dg::geo::einsMinus()'],['../../../geometries/html/group__fieldaligned.html#gga10e4ac4f15fe73a4ff10569985224101ac4342c25611d86ddd01f4f48a2054f86',1,'einsMinus()(Global Namespace)']]],
+  ['einsminust_1',['einsMinusT',['../../../geometries/html/group__fieldaligned.html#gga10e4ac4f15fe73a4ff10569985224101af101993895ad46716e7324439d6bd226',1,'dg::geo::einsMinusT()'],['../../../geometries/html/group__fieldaligned.html#gga10e4ac4f15fe73a4ff10569985224101af101993895ad46716e7324439d6bd226',1,'einsMinusT()(Global Namespace)']]],
+  ['einsplus_2',['einsPlus',['../../../geometries/html/group__fieldaligned.html#gga10e4ac4f15fe73a4ff10569985224101a3051e3e0498abaac57b76c94c1b94e25',1,'dg::geo::einsPlus()'],['../../../geometries/html/group__fieldaligned.html#gga10e4ac4f15fe73a4ff10569985224101a3051e3e0498abaac57b76c94c1b94e25',1,'einsPlus()(Global Namespace)']]],
+  ['einsplust_3',['einsPlusT',['../../../geometries/html/group__fieldaligned.html#gga10e4ac4f15fe73a4ff10569985224101a123cc46161ad1c9729aa385716751918',1,'dg::geo::einsPlusT()'],['../../../geometries/html/group__fieldaligned.html#gga10e4ac4f15fe73a4ff10569985224101a123cc46161ad1c9729aa385716751918',1,'einsPlusT()(Global Namespace)']]],
+  ['elongation_4',['elongation',['../../../geometries/html/structdg_1_1geo_1_1polynomial_1_1_parameters.html#abb6e5e5e1ec4022063c90ed177cf414b',1,'dg::geo::polynomial::Parameters::elongation()'],['../../../geometries/html/structdg_1_1geo_1_1solovev_1_1_parameters.html#ab439f555651431b5331a196441563fa3',1,'dg::geo::solovev::Parameters::elongation()']]],
+  ['ex_5fcontrol_5',['ex_control',['../group__time__utils.html#ga32b696f59effe7da0f61b68275f6b180',1,'dg']]]
+];

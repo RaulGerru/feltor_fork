@@ -1,0 +1,57 @@
+var group__sparsematrix =
+[
+    [ "dg::EllSparseBlockMat< value_type >", "structdg_1_1_ell_sparse_block_mat.html", [
+      [ "EllSparseBlockMat", "structdg_1_1_ell_sparse_block_mat.html#a2f34bd346e2cdf9bb2e888f1405076c2", null ],
+      [ "EllSparseBlockMat", "structdg_1_1_ell_sparse_block_mat.html#a5c45f67973ed4df1bc4978e95c143904", null ],
+      [ "asCuspMatrix", "structdg_1_1_ell_sparse_block_mat.html#a8557e4748daff3b3031a9a0a04c7261b", null ],
+      [ "display", "structdg_1_1_ell_sparse_block_mat.html#a0122c409ace2cc310a7982513f60862f", null ],
+      [ "set_default_range", "structdg_1_1_ell_sparse_block_mat.html#a3485d3aaa6724812ebd123cafc1fd91d", null ],
+      [ "symv", "structdg_1_1_ell_sparse_block_mat.html#a97d474ec82b0fbfcbdd24eabdd583b72", null ],
+      [ "total_num_cols", "structdg_1_1_ell_sparse_block_mat.html#a1a09d178e6e56fb8aeb6c9d94cc7fe20", null ],
+      [ "total_num_rows", "structdg_1_1_ell_sparse_block_mat.html#a5f3c8429c35f2fc053c2eaa5996b0d2f", null ],
+      [ "blocks_per_line", "structdg_1_1_ell_sparse_block_mat.html#a49d70e8ce88ac45a7db26c1375550834", null ],
+      [ "cols_idx", "structdg_1_1_ell_sparse_block_mat.html#a9cae2f1171d04d37513a7d1685604dcf", null ],
+      [ "data", "structdg_1_1_ell_sparse_block_mat.html#a56beeefe5a17057cfa7895f3ad532a19", null ],
+      [ "data_idx", "structdg_1_1_ell_sparse_block_mat.html#a2fb3ddccae442119174aba175b37ffd2", null ],
+      [ "left_size", "structdg_1_1_ell_sparse_block_mat.html#a794a041e52b3e4fd6297d0dec8f3fc8b", null ],
+      [ "n", "structdg_1_1_ell_sparse_block_mat.html#aa29bbb8bca4155841dbb603362dcdfe4", null ],
+      [ "num_cols", "structdg_1_1_ell_sparse_block_mat.html#a97dc6569dd4fcc1af9847b8c8fb9f287", null ],
+      [ "num_rows", "structdg_1_1_ell_sparse_block_mat.html#a4bf43725ff2db10da6ddda7508ff7b27", null ],
+      [ "right_range", "structdg_1_1_ell_sparse_block_mat.html#aad68d6b276dba3d835c812de1590f198", null ],
+      [ "right_size", "structdg_1_1_ell_sparse_block_mat.html#abce816133c166271872359eb96a9b897", null ]
+    ] ],
+    [ "dg::CooSparseBlockMat< value_type >", "structdg_1_1_coo_sparse_block_mat.html", [
+      [ "CooSparseBlockMat", "structdg_1_1_coo_sparse_block_mat.html#adb3d7d1d91b63aa3ce3cba8cf9aca306", null ],
+      [ "CooSparseBlockMat", "structdg_1_1_coo_sparse_block_mat.html#acce1f37c294317037956daa3bdf8b089", null ],
+      [ "add_value", "structdg_1_1_coo_sparse_block_mat.html#aa573b0725f3c77c5037c42f01ab18d8a", null ],
+      [ "display", "structdg_1_1_coo_sparse_block_mat.html#a27227d871e3d2da4b11eea8e40db2cda", null ],
+      [ "symv", "structdg_1_1_coo_sparse_block_mat.html#a91cdd748508dd4729f7a545653107705", null ],
+      [ "total_num_cols", "structdg_1_1_coo_sparse_block_mat.html#a0c405af0b529010f56f034423fc512ec", null ],
+      [ "total_num_rows", "structdg_1_1_coo_sparse_block_mat.html#ab547f80e7381e6780fa7961159830a8d", null ],
+      [ "cols_idx", "structdg_1_1_coo_sparse_block_mat.html#ae692b6fd313470e6c4cd849a069ba3d2", null ],
+      [ "data", "structdg_1_1_coo_sparse_block_mat.html#a270f8fb63a914c19b7053beeb03b7432", null ],
+      [ "data_idx", "structdg_1_1_coo_sparse_block_mat.html#a13ade6a19e96a10d9aa55220a92365f1", null ],
+      [ "left_size", "structdg_1_1_coo_sparse_block_mat.html#a5879228f786f6a22e351e26edd00423b", null ],
+      [ "n", "structdg_1_1_coo_sparse_block_mat.html#a6b253047ab5281181c67c9a7e073cf26", null ],
+      [ "num_cols", "structdg_1_1_coo_sparse_block_mat.html#abb69f47621c8e59bf74f5008b02a3728", null ],
+      [ "num_entries", "structdg_1_1_coo_sparse_block_mat.html#af67dc52548a78dd6a9b4b9dc17497240", null ],
+      [ "num_rows", "structdg_1_1_coo_sparse_block_mat.html#a037e28160d038c6c3d190d533553b1f9", null ],
+      [ "right_size", "structdg_1_1_coo_sparse_block_mat.html#af2e04cf5f744a5a2284b57d50c849545", null ],
+      [ "rows_idx", "structdg_1_1_coo_sparse_block_mat.html#a47f1fd7b3572f09aabe5dc9269a6dbe7", null ]
+    ] ],
+    [ "dg::SparseTensor< container >", "structdg_1_1_sparse_tensor.html", [
+      [ "container_type", "structdg_1_1_sparse_tensor.html#a5bf0669dc82dd8b7cd98ba435f16690d", null ],
+      [ "SparseTensor", "structdg_1_1_sparse_tensor.html#a3f16dfb5f42919faf151ca3588e97a70", null ],
+      [ "SparseTensor", "structdg_1_1_sparse_tensor.html#ac9fefe1b8ce8c92c48703cd964748014", null ],
+      [ "SparseTensor", "structdg_1_1_sparse_tensor.html#a4130b44287f60f121f9602d242b84c82", null ],
+      [ "SparseTensor", "structdg_1_1_sparse_tensor.html#a2e0e000ead631f50fae8316d176c5b73", null ],
+      [ "construct", "structdg_1_1_sparse_tensor.html#abf5904392851f828c6637efb72dee84c", null ],
+      [ "construct", "structdg_1_1_sparse_tensor.html#a092437fae121aafca6d75cdc16f059d1", null ],
+      [ "idx", "structdg_1_1_sparse_tensor.html#a8111772e04edec306fc2cd14f9ecde13", null ],
+      [ "idx", "structdg_1_1_sparse_tensor.html#a360416d36b69a36180f095422e5ba3b5", null ],
+      [ "transpose", "structdg_1_1_sparse_tensor.html#a3c00f17ba15517d5e597e72e6bcbc90e", null ],
+      [ "value", "structdg_1_1_sparse_tensor.html#af490f0060fe6ba9ad92ef912577d34bb", null ],
+      [ "values", "structdg_1_1_sparse_tensor.html#a6a281f22e33f1e1d70b3f59b1fe3d970", null ],
+      [ "values", "structdg_1_1_sparse_tensor.html#ab6efc05d782cc007c13d9a3a71b137a1", null ]
+    ] ]
+];

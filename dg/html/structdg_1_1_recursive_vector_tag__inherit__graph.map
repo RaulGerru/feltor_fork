@@ -1,0 +1,7 @@
+<map id="dg::RecursiveVectorTag" name="dg::RecursiveVectorTag">
+<area shape="rect" id="node1" title="This tag indicates composition/recursion." alt="" coords="65,155,227,181"/>
+<area shape="rect" id="node4" href="$structdg_1_1_array_vector_tag.html" title=" " alt="" coords="5,229,140,256"/>
+<area shape="rect" id="node5" href="$structdg_1_1_std_map_tag.html" title=" " alt="" coords="164,229,275,256"/>
+<area shape="rect" id="node2" href="$structdg_1_1_any_vector_tag.html" title="Vector Tag base class, indicates the basic Vector/container concept." alt="" coords="83,80,209,107"/>
+<area shape="rect" id="node3" href="$structdg_1_1_any_matrix_tag.html" title=" " alt="" coords="84,5,208,32"/>
+</map>

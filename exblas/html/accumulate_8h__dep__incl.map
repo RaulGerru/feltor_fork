@@ -1,0 +1,6 @@
+<map id="accumulate.h" name="accumulate.h">
+<area shape="rect" id="node1" title="Primitives for accumulation into superaccumulator." alt="" coords="128,5,228,32"/>
+<area shape="rect" id="node2" href="$exdot__omp_8h.html" title="OpenMP version of exdot." alt="" coords="5,80,103,107"/>
+<area shape="rect" id="node3" href="$exdot__serial_8h.html" title="Serial version of exdot." alt="" coords="127,80,229,107"/>
+<area shape="rect" id="node4" href="$mpi__accumulate_8h.html" title="Primitives for an MPI Reduction." alt="" coords="254,80,382,107"/>
+</map>

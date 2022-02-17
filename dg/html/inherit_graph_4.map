@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$structdg_1_1a_communicator.html" title=" " alt="" coords="5,71,149,112"/>
+<area shape="rect" id="node2" href="$structdg_1_1_bijective_comm.html" title="Perform bijective gather and its transpose (scatter) operation across processes on distributed vector..." alt="" coords="215,5,356,47"/>
+<area shape="rect" id="node3" href="$structdg_1_1_general_comm.html" title="Perform general gather and its transpose (scatter) operation across processes on distributed vectors ..." alt="" coords="197,71,373,112"/>
+<area shape="rect" id="node4" href="$structdg_1_1_surjective_comm.html" title="Perform surjective gather and its transpose (scatter) operation across processes on distributed vecto..." alt="" coords="215,136,356,177"/>
+</map>

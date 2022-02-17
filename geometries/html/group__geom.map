@@ -1,0 +1,12 @@
+<map id="3.1 Creating a flux function" name="3.1 Creating a flux function">
+<area shape="rect" id="node1" href="$group__circular.html" title=" " alt="" coords="429,5,585,31"/>
+<area shape="rect" id="node2" title="dg::geo::createMagneticField" alt="" coords="240,187,369,227"/>
+<area shape="rect" id="node4" href="$group__guenther.html" title=" " alt="" coords="425,55,589,80"/>
+<area shape="rect" id="node5" href="$group__mod.html" title=", dg::geo::createModifiedField" alt="" coords="441,105,573,145"/>
+<area shape="rect" id="node6" href="$group__polynomial.html" title=" " alt="" coords="420,169,593,195"/>
+<area shape="rect" id="node7" href="$group__solovev.html" title=" " alt="" coords="429,219,585,244"/>
+<area shape="rect" id="node8" href="$group__taylor.html" title=" " alt="" coords="417,268,596,293"/>
+<area shape="rect" id="node9" href="$group__toroidal.html" title=" " alt="" coords="439,318,574,358"/>
+<area shape="rect" id="node10" href="$group__wall.html" title=" " alt="" coords="448,383,565,408"/>
+<area shape="rect" id="node3" href="$group__geom__functors.html" title=" " alt="" coords="5,187,192,227"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="dg::RealCartesianRefinedGridX2d&lt; real_type &gt;" name="dg::RealCartesianRefinedGridX2d&lt; real_type &gt;">
+<area shape="rect" id="node1" title="Refined X&#45;point grid." alt="" coords="5,184,177,225"/>
+<area shape="rect" id="node2" href="$structdg_1_1a_real_geometry_x2d.html" title="This is the abstract interface class for a two&#45;dimensional RealGeometryX." alt="" coords="12,95,171,136"/>
+<area shape="rect" id="node3" href="$structdg_1_1a_real_topology_x2d.html" title="A 2D grid class with X&#45;point topology." alt="" coords="15,5,168,47"/>
+</map>

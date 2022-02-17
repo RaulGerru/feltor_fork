@@ -1,0 +1,10 @@
+<map id="Functions and functors for subroutine and evaluate" name="Functions and functors for subroutine and evaluate">
+<area shape="rect" id="node1" href="$group__basics.html" title="For the dg::evaluate and dg::blas1::evaluate functions." alt="" coords="503,5,566,31"/>
+<area shape="rect" id="node2" href="$group__binary__operators.html" title="Binary subroutines for the dg::blas1::evaluate function." alt="" coords="460,55,609,95"/>
+<area shape="rect" id="node3" title=" " alt="" coords="208,149,391,189"/>
+<area shape="rect" id="node4" href="$group__composition.html" title=" " alt="" coords="467,119,602,159"/>
+<area shape="rect" id="node5" href="$group__functions.html" title="For the dg::evaluate and dg::blas1::evaluate functions." alt="" coords="474,184,595,209"/>
+<area shape="rect" id="node7" href="$group__variadic__evaluates.html" title="Functors to use in the dg::blas1::evaluate function." alt="" coords="455,234,614,274"/>
+<area shape="rect" id="node8" href="$group__variadic__subroutines.html" title="Functors to use in the dg::blas1::subroutine functions." alt="" coords="439,299,631,324"/>
+<area shape="rect" id="node6" href="$group__misc.html" title=" " alt="" coords="5,149,160,189"/>
+</map>

@@ -1,0 +1,11 @@
+var searchData=
+[
+  ['data_0',['data',['../../../dg/html/structdg_1_1_coo_sparse_block_mat.html#a270f8fb63a914c19b7053beeb03b7432',1,'dg::CooSparseBlockMat::data()'],['../../../dg/html/structdg_1_1_ell_sparse_block_mat.html#a56beeefe5a17057cfa7895f3ad532a19',1,'dg::EllSparseBlockMat::data()']]],
+  ['data_5fidx_1',['data_idx',['../../../dg/html/structdg_1_1_coo_sparse_block_mat.html#a13ade6a19e96a10d9aa55220a92365f1',1,'dg::CooSparseBlockMat::data_idx()'],['../../../dg/html/structdg_1_1_ell_sparse_block_mat.html#a2fb3ddccae442119174aba175b37ffd2',1,'dg::EllSparseBlockMat::data_idx()']]],
+  ['description_2',['description',['../structdg_1_1geo_1_1polynomial_1_1_parameters.html#a1608a4328903e576b460ad393beca011',1,'dg::geo::polynomial::Parameters::description()'],['../structdg_1_1geo_1_1solovev_1_1_parameters.html#a76b813844525b0f9650f3928c37dea18',1,'dg::geo::solovev::Parameters::description()']]],
+  ['dir_3',['DIR',['../../../dg/html/group__creation.html#gga59440bdf436f2874b49aa52b670ed364adece0b7644d85f490823799a3b97f7e6',1,'dg::DIR()'],['../../../dg/html/group__creation.html#gga59440bdf436f2874b49aa52b670ed364adece0b7644d85f490823799a3b97f7e6',1,'DIR()(Global Namespace)']]],
+  ['dir_5fneu_4',['DIR_NEU',['../../../dg/html/group__creation.html#gga59440bdf436f2874b49aa52b670ed364ae1ff2b85fda37868973c8059e3ca3a79',1,'dg::DIR_NEU()'],['../../../dg/html/group__creation.html#gga59440bdf436f2874b49aa52b670ed364ae1ff2b85fda37868973c8059e3ca3a79',1,'DIR_NEU()(Global Namespace)']]],
+  ['dormand_5fprince_5f13_5f7_5f8_5',['DORMAND_PRINCE_13_7_8',['../../../dg/html/group__time__utils.html#gga80d4d81df02e5311bb20b3f74ea45992a448f4a686cd23e40f778abe1d3dabcd8',1,'dg::DORMAND_PRINCE_13_7_8()'],['../../../dg/html/group__time__utils.html#gga80d4d81df02e5311bb20b3f74ea45992a448f4a686cd23e40f778abe1d3dabcd8',1,'DORMAND_PRINCE_13_7_8()(Global Namespace)']]],
+  ['dormand_5fprince_5f7_5f4_5f5_6',['DORMAND_PRINCE_7_4_5',['../../../dg/html/group__time__utils.html#gga80d4d81df02e5311bb20b3f74ea45992a5e964b2560e1c1b03d280c766fc5a129',1,'dg::DORMAND_PRINCE_7_4_5()'],['../../../dg/html/group__time__utils.html#gga80d4d81df02e5311bb20b3f74ea45992a5e964b2560e1c1b03d280c766fc5a129',1,'DORMAND_PRINCE_7_4_5()(Global Namespace)']]],
+  ['dual_7',['dual',['../../../dg/html/structdg_1_1_composite.html#a1cfcdd5b64963bc19a5fe8b5f194b964',1,'dg::Composite']]]
+];

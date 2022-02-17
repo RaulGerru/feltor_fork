@@ -1,0 +1,5 @@
+<map id="blas1::subroutine subroutines" name="blas1::subroutine subroutines">
+<area shape="rect" id="node1" href="$group__binary__operators.html" title="Binary subroutines for the dg::blas1::evaluate function." alt="" coords="547,15,696,55"/>
+<area shape="rect" id="node2" href="$group__blas1__helpers.html" title=" " alt="" coords="5,15,188,55"/>
+<area shape="rect" id="node3" title="Functors to use in the dg::blas1::subroutine functions." alt="" coords="237,22,429,47"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="dg::AnyMatrixTag" name="dg::AnyMatrixTag">
+<area shape="rect" id="node1" title=" " alt="" coords="5,208,129,235"/>
+<area shape="rect" id="node2" href="$structdg_1_1_any_vector_tag.html" title="Vector Tag base class, indicates the basic Vector/container concept." alt="" coords="201,81,328,108"/>
+<area shape="rect" id="node13" href="$structdg_1_1_cusp_matrix_tag.html" title="One of cusp&#39;s matrices, for these only the blas2 transfer and the symv( m,x,y) are implemented." alt="" coords="199,132,331,159"/>
+<area shape="rect" id="node14" href="$structdg_1_1_dense_matrix_tag.html" title="indicate our dense matrix format" alt="" coords="195,183,334,209"/>
+<area shape="rect" id="node15" href="$structdg_1_1_m_p_i_matrix_tag.html" title="indicate one of our mpi matrices" alt="" coords="202,233,327,260"/>
+<area shape="rect" id="node16" href="$structdg_1_1_self_made_matrix_tag.html" title="Indicates that the type has a member function with the same name and interface (up to the matrix itse..." alt="" coords="187,284,343,311"/>
+<area shape="rect" id="node17" href="$structdg_1_1_sparse_block_matrix_tag.html" title="indicate our sparse block matrix format" alt="" coords="177,335,352,361"/>
+<area shape="rect" id="node3" href="$structdg_1_1_any_scalar_tag.html" title="Scalar Tag base class, indicates the basic Scalar Tensor concept." alt="" coords="419,5,544,32"/>
+<area shape="rect" id="node5" href="$structdg_1_1_m_p_i_vector_tag.html" title="A distributed vector contains a data container and a MPI communicator." alt="" coords="418,56,545,83"/>
+<area shape="rect" id="node6" href="$structdg_1_1_recursive_vector_tag.html" title="This tag indicates composition/recursion." alt="" coords="400,107,563,133"/>
+<area shape="rect" id="node9" href="$structdg_1_1_shared_vector_tag.html" title="Indicate a contiguous chunk of shared memory." alt="" coords="409,157,553,184"/>
+<area shape="rect" id="node4" href="$structdg_1_1_scalar_tag.html" title=" " alt="" coords="627,5,729,32"/>
+<area shape="rect" id="node7" href="$structdg_1_1_array_vector_tag.html" title=" " alt="" coords="611,56,745,83"/>
+<area shape="rect" id="node8" href="$structdg_1_1_std_map_tag.html" title=" " alt="" coords="623,107,733,133"/>
+<area shape="rect" id="node10" href="$structdg_1_1_array_scalar_tag.html" title=" " alt="" coords="611,157,745,184"/>
+<area shape="rect" id="node11" href="$structdg_1_1_thrust_vector_tag.html" title="Indicate thrust/std &#45; like behaviour." alt="" coords="793,157,933,184"/>
+<area shape="rect" id="node12" href="$structdg_1_1_cusp_vector_tag.html" title="special tag for cusp arrays" alt="" coords="981,157,1116,184"/>
+</map>

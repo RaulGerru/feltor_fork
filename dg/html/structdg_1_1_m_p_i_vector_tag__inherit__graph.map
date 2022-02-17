@@ -1,0 +1,5 @@
+<map id="dg::MPIVectorTag" name="dg::MPIVectorTag">
+<area shape="rect" id="node1" title="A distributed vector contains a data container and a MPI communicator." alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node2" href="$structdg_1_1_any_vector_tag.html" title="Vector Tag base class, indicates the basic Vector/container concept." alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node3" href="$structdg_1_1_any_matrix_tag.html" title=" " alt="" coords="7,5,131,32"/>
+</map>
